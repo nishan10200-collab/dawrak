@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    font-family: 'Noto Kufi Arabic', Tahoma, Arial, sans-serif;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+    direction: rtl;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-barber-700 hover:bg-barber-800 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-gray-700 font-semibold py-3 px-6 rounded-xl border border-gray-200 transition-all duration-200 shadow-sm active:scale-95;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200 active:scale-95;
+  }
+
+  .btn-success {
+    @apply bg-barber-600 hover:bg-barber-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200 active:scale-95;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-gray-100 p-5;
+  }
+
+  .input-field {
+    @apply w-full border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-barber-500 focus:border-barber-500 outline-none transition-all text-gray-900 placeholder-gray-400;
+  }
+
+  .badge-waiting {
+    @apply bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-medium;
+  }
+
+  .badge-notified {
+    @apply bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium;
+  }
+
+  .badge-confirmed {
+    @apply bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium;
+  }
+
+  .badge-serving {
+    @apply bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-medium;
+  }
+
+  .badge-done {
+    @apply bg-gray-100 text-gray-600 px-2 py-1 rounded-full text-xs font-medium;
+  }
+}
+
+/* تأثير الانتقال */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* شريط التحميل */
+.loading-bar {
+  @apply fixed top-0 left-0 right-0 h-1 bg-barber-500 z-50;
+  animation: loading 1s ease infinite;
+}
+
+@keyframes loading {
+  0% { transform: scaleX(0); transform-origin: left; }
+  50% { transform: scaleX(0.7); transform-origin: left; }
+  100% { transform: scaleX(1); transform-origin: left; }
+}
+
+/* نبضة للزبون القادم دوره */
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+}
+
+.pulse-notification {
+  animation: pulse-green 2s infinite;
+}
