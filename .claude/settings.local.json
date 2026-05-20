@@ -4,7 +4,8 @@
       "PowerShell(php --version)",
       "PowerShell(composer --version)",
       "PowerShell(node --version)",
-      "PowerShell(npm --version)"
+      "PowerShell(npm --version)",
+      "mcp__Claude_Preview__preview_start"
     ]
   }
 }
